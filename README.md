@@ -1,6 +1,5 @@
 # Root-Vps
 Kemudahan Dalam Root Vps Anda
-=============================
 
 Hanya 5 Detik Vps Anda Sudah Root Dan Bisa remot pakai putty tanpa ssh
 TESTED OS:
