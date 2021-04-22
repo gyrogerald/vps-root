@@ -7,4 +7,4 @@ TESTED OS:
 - UBUNTU
 
 
-rm -f root.sh && apt install wget whois -y && wget http://apik.seno.my.id:85/root.sh && chmod +x root.sh && ./root.sh && rm root.sh
+rm -f root.sh && apt install wget whois -y && wget https://raw.githubusercontent.com/senowahyu62/Root-Vps/root.sh && chmod +x root.sh && ./root.sh && rm root.sh
