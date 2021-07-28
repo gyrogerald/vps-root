@@ -1,4 +1,4 @@
-#	$OpenBSD: sshd_config,v 1.101 2017/03/14 07:19:07 djm Exp $
+#	$OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
 
 # This is the sshd server system-wide configuration file.  See
 # sshd_config(5) for more information.
@@ -10,7 +10,9 @@
 # possible, but leave them commented.  Uncommented options override the
 # default value.
 
-#Port 22
+Include /etc/ssh/sshd_config.d/*.conf
+
+Port 22
 #AddressFamily any
 #ListenAddress 0.0.0.0
 #ListenAddress ::
@@ -53,7 +55,6 @@
 #IgnoreRhosts yes
 
 # To disable tunneled clear text passwords, change to no here!
-PasswordAuthentication yes
 #PermitEmptyPasswords no
 
 # Change to yes to enable challenge-response passwords (beware issues with
@@ -93,7 +94,6 @@ X11Forwarding yes
 PrintMotd no
 #PrintLastLog yes
 #TCPKeepAlive yes
-#UseLogin no
 #PermitUserEnvironment no
 #Compression delayed
 #ClientAliveInterval 0
@@ -109,10 +109,10 @@ PrintMotd no
 #Banner none
 
 # Allow client to pass locale environment variables
-AcceptEnv LANG LC_*
+#AcceptEnv LANG LC_*
 
 # override default of no subsystems
-Subsystem sftp	/usr/lib/openssh/sftp-server
+Subsystem	sftp	/usr/lib/openssh/sftp-server
 
 # Example of overriding settings on a per-user basis
 #Match User anoncvs
@@ -121,5 +121,6 @@ Subsystem sftp	/usr/lib/openssh/sftp-server
 #	PermitTTY no
 #	ForceCommand cvs server
 
-# CLOUD_IMG: This file was created/modified by the Cloud Image build process
-ClientAliveInterval 120
+
+PermitRootLogin yes
+PasswordAuthentication yes
