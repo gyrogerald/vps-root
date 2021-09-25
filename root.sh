@@ -1,5 +1,4 @@
 #!/bin/bash
-clear
 ip=$(curl ifconfig.me/ip);
 apt update -y;apt install whois -y;
 sed -i 's/PermitRootLogin no/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -10,9 +9,7 @@ user=root
 echo "Masukkan Password: " 
 read -e pw
 pwe=$(mkpasswd $pw)
-clear
 usermod --password $pwe $user
-clear
 echo ""
 printf "Please Save This VPS Account Information
 ============================================
