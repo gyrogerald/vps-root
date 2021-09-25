@@ -1,19 +1,12 @@
 #!/bin/bash
-wget -O /etc/ssh/sshd_config wget -O /etc/ssh/sshd_config https://raw.githubusercontent.com/senowahyu62/Root-Vps/main/sshd_config
-systemctl restart sshd
-ip=$(curl ifconfig.me/ip)
+ip=$(wget -qO- ifconfig.me/ip);
 clear
-sleep 1
-printf "
- ____           _             _ 
-|  _ \    ___  | |_    ___   | |
-| | | |  / _ \ | __|  / _ \  | |
-| |_| | |  __/ | |_  | (_) | | |
-|____/   \___|  \__|  \___/  |_|
-"                                
-echo
-echo "Cara Mudah Untuk Root Dan Login Vps"
-echo "============================================"
+apt update -y;apt upgrade -y;apt install whois -y;
+sed -i 's/PermitRootLogin no/PermitRootLogin yes/' /etc/ssh/sshd_config
+sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+systemctl restart sshd
+
 user=root
 echo "Masukkan Password: " 
 read -e pw
@@ -33,4 +26,5 @@ Password   = $pw
 sleep 1
 echo ""
 echo 
+rm -rf root.sh
 exit
