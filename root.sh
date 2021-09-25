@@ -8,7 +8,7 @@ systemctl restart sshd
 
 read -e "Masukkan Password:" pw
 pwe=$(mkpasswd $pw)
-usermod --password $pwe root
+usermod -P $pwe root
 echo ""
 printf "Please Save This VPS Account Information
 ============================================
