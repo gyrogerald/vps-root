@@ -6,9 +6,8 @@ sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd
 sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 systemctl restart sshd
 
-read -e "Masukkan Password:" pw
-pwe=$(mkpasswd $pw)
-usermod -P $pwe root
+read -e "Masukkan Password:" pwe
+usermod -p `perl -e "print crypt("$pwe","Q4")"` root
 echo ""
 printf "Please Save This VPS Account Information
 ============================================
