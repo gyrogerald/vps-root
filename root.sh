@@ -7,14 +7,13 @@ sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_c
 systemctl restart sshd
 echo -e "Masukkan Password"
 read -e pwe
-usermod -p `perl -e "print crypt("$pwe","Q4")"` root
-echo ""
+usermod -p `perl -e "print crypt("$pwe","Q4")"` root;
+clear;
 printf "Please Save This VPS Account Information
 ============================================
 Ip address = $ip
 Username   = $user
 Password   = $pwe
 ============================================"
-sleep 1
-echo ""
+echo "";
 exit
