@@ -26,5 +26,4 @@ Password   = $pw
 sleep 1
 echo ""
 echo 
-rm -rf root.sh
 exit
