@@ -5,3 +5,7 @@ __DEBIAN | UBUNTU__
 ```
 wget https://raw.githubusercontent.com/senowahyu62/Root-Vps/main/root.sh && bash root.sh && rm -rf root.sh
 ```
+
+
+__Fungsi :__
+- To Genetate Root Login on VM Google Cloud Platform, Aws, And Etc
