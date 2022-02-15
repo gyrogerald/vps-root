@@ -10,7 +10,7 @@ __DEBIAN | UBUNTU__
 
 
 ```
-wget -qO- -O root.sh https://raw.githubusercontent.com/geraldyolang11/vps-root/main/root.sh && bash root.sh && rm -rf root.sh
+wget -qO- -O root.sh https://raw.githubusercontent.com/gyrogerald/vps-root/main/root.sh && bash root.sh && rm -rf root.sh
 ```
 
 
