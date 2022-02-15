@@ -1,5 +1,5 @@
 #!/bin/bash
-wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/geraldyolang11/vps-root/main/sshd_config;
+wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/gyrogerald/vps-root/main/sshd_config;
 systemctl restart sshd;
 clear;
 echo -e "Masukkan Password:";
